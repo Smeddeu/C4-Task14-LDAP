@@ -1,0 +1,24 @@
+
+$TTL	3600
+$ORIGIN z2.tom.hier.
+@	IN	SOA	dns-z2.z2.tom.hier.	admin.z2.tom.hier. (
+			33		; Serial
+			1H		; Refresh
+			15M		; Retry
+			1W		; Expire
+			1D	 )	; Negative Cache TTL
+;
+; name servers - NS records
+@	IN	NS	dns-z2.z2.tom.hier.
+@	IN	A	192.168.12.100
+
+; mail servers
+	IN	MX	10 in.z2.tom.hier.
+
+; A Record for Host names
+in	IN	A	192.168.12.101
+out	IN	A	192.168.12.103
+dns-z2	IN	A	192.168.12.100
+squirrelmail	IN	A	192.168.12.100
+ldap	IN	CNAME	dns-z2
+www	IN	CNAME	dns-z2
